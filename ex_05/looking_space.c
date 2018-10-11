@@ -4,7 +4,7 @@
 #define EMPTY 0
 #define BLOCKED 1
 
-int	*looking_space(int **table, int *lines, int *columns, int value)
+int	*look_for_space(int **table, int *lines, int *columns, int value)
 {
   int *ret = malloc(sizeof(int)*2);
 
@@ -84,6 +84,6 @@ int	main()
   columns[1] = EMPTY;
   columns[2] = BLOCKED;
   columns[3] = BLOCKED;
-  verif_return(looking_space(table, lines, columns, 1));
-  verif_return(looking_space(table, lines, columns, 2));
+  verif_return(look_for_space(table, lines, columns, 1));
+  verif_return(look_for_space(table, lines, columns, 2));
 }
