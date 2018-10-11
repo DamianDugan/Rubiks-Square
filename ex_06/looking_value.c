@@ -4,23 +4,23 @@
 #define EMPTY 0
 #define BLOCKED 1
 
-int	*looking_space(int **table, int *lines, int *columns, int value)
+int *looking_value(int **table, int *lines, int *columns, int value)
 {
-  int *ret = malloc(sizeof(int)*2);
-
-  for(int i = 0 ; i < 4 ; i++ )
+  int *ret = malloc(sizeof(int) * 2);
+  
+  for (int i = 0; i < 4; i++)
     {
       if (lines[i] == 0)
 	{
-	  for (int j = 0; j < 4 ; j++)
+	  for (int j = 0; j < 4; j++)
 	    {
 	      if (columns[j] == 0)
 		{
-		  if(value != table[i][j])
+		  if (value == table[i][j])
 		    {
 		      ret[0] = i;
 		      ret[1] = j;
-		      return ret;
+		      return (ret);
 		    }
 		}
 	    }
@@ -75,7 +75,6 @@ int	main()
   table[0][2] = 1;
   table[0][3] = 1;
 
-
   lines[0]= BLOCKED;
   lines[1]= BLOCKED;
   lines[2] = EMPTY;
@@ -84,6 +83,6 @@ int	main()
   columns[1] = EMPTY;
   columns[2] = BLOCKED;
   columns[3] = BLOCKED;
-  verif_return(looking_space(table, lines, columns, 1));
-  verif_return(looking_space(table, lines, columns, 2));
+  verif_return(looking_value(table, lines, columns, 1));
+  verif_return(looking_value(table, lines, columns, 2));
 }
