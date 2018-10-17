@@ -31,15 +31,16 @@ void	algo_line(int **table, int line)
 
 void	algo_column(int **table, int column)
 {
-  int i = 3;
+  int i = 0;
   int tmp;
 
-  tmp = table[3][column];
-  while (i > 0)
+  tmp = table[0][column];
+  while (i < 3)
     {
-      table[i][column] = table[i-1][column];
-      i--;
+      table[i][column] = table[i+1][column];
+      i++;
     }
+  table[3][column] = tmp;
 }
 
 void	algo_line_reverse(int **table, int line)
@@ -85,7 +86,6 @@ int	*look_for_value(int**table, int *lines, int *columns, int value)
 		    {
 		      ret[0] = i;
 		      ret[1] = j;
-		      printf("%d %d\n", ret[0], ret[1]);
 		      return (ret);
 		    }
 		}
