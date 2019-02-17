@@ -10,13 +10,13 @@ void rotate_columns(int **table, int column, int offset)
   if (offset < 0)
     while(i < (-offset))
       {
-	algo_column_reverse(table, column);
+	algo_column(table, column);
 	i++;
       }
   if (offset > 0)
     while(j < offset)
       {
-	algo_column(table, column);
+	algo_column_reverse(table, column);
 	j++;
       }
 }

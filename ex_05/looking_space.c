@@ -16,7 +16,7 @@ int	*look_for_space(int **table, int *lines, int *columns, int value)
 	    {
 	      if (columns[j] == 0)
 		{
-		  if(value != table[i][j])
+		  if(value == table[i][j])
 		    {
 		      ret[0] = i;
 		      ret[1] = j;
@@ -84,6 +84,7 @@ int	main()
   columns[1] = EMPTY;
   columns[2] = BLOCKED;
   columns[3] = BLOCKED;
-  verif_return(look_for_space(table, lines, columns, 1));
+  print_tab(table);
+  verif_return(look_for_space(table, lines, columns, 3));
   verif_return(look_for_space(table, lines, columns, 2));
 }

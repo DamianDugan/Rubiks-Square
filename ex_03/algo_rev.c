@@ -77,7 +77,7 @@ void	algo_square_reverse(int **table, int square)
  printf("Rotate Counter Clockwise square %d.\n", square);
  print_tab(table);
 }
-/*
+
 int	main()
 {
   int line, square, column = 0;
@@ -127,4 +127,4 @@ int	main()
   print_tab(table);
   algo_square_reverse(table, 0);
   print_tab(table);
-  }*/
+  }

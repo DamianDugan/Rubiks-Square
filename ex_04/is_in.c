@@ -65,7 +65,7 @@ int	main()
     }
   table[0][2] = 1;
   table[0][3] = 1;
-  
-  printf("%d - %d\n", is_in_line(table, 0, 1), is_in_col(table, 2, 3));
-  printf("%d - %d\n", is_in_line(table, 3, 1), is_in_col(table, 2, 0));
+  print_tab(table);
+  printf("test line 0 got 1 : %d - test col 2 got 3: %d\n", is_in_line(table, 0, 1), is_in_col(table, 2, 3));
+  printf("test line 3 got 1 : %d - test col 2 got 0 : %d\n", is_in_line(table, 3, 1), is_in_col(table, 2, 0));
 }

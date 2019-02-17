@@ -22,11 +22,11 @@ void	algo_line(int **table, int line)
 
 void	algo_column(int **table, int column)
 {
-  int i = 3;
+  int i = 1;
   int tmp;
 
   tmp = table[3][column];
-  while (i > 0)
+  while (i < 4)
     {
       table[i][column] = table[i-1][column];
       i--;
@@ -77,7 +77,7 @@ void	algo_square(int **table, int square)
  printf("Rotate Clockwise square %d.\n", square);
  print_tab(table);
 }
-/*
+
 int	main()
 {
   int line, square, column = 0;
@@ -121,10 +121,13 @@ int	main()
       k++;
       }
   print_tab(table);
+  printf("This is algo line\n");
   algo_line(table, 0);
-  print_tab(table);  
+   print_tab(table);
+  printf("This is algo column\n");
   algo_column(table, 0);
   print_tab(table);
+  printf("This is algo square\n");
   algo_square(table, 0);
   print_tab(table);
-}*/
+}
